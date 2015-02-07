@@ -1,15 +1,10 @@
 
 $(document).ready(function() {
-	$('section#palette div').on('dragstart', function(event) {
-		startDrag(event.originalEvent, $(this).attr('id'));
-	});
+	$('section#palette div').on('dragstart', startDrag);
 	$('section#main').on('dragover', function(event) {
 		event.originalEvent.preventDefault();
 	});
 	$('section#main').on('drop', function(event) {
-		$('section#main p').remove();
-		$('section#main').append('<p>' + JSON.stringify(event) + '</p>');
-		/*
 		event = event.originalEvent;
 		var id = event.dataTransfer.getData('type');
 		var x = event.pageX - Math.floor(0.03125 * $(window).width());
@@ -20,10 +15,9 @@ $(document).ready(function() {
 		stack.find('img').on('dragstart', function(event) {
 			startDrag(event.originalEvent, $(this).attr('class'));
 		});
-		*/
 	});
 });
 
-function startDrag(event, type) {
-	event.dataTransfer.setData('type', type);
+function startDrag(event) {
+	event.originalEvent.dataTransfer.setData('type', $(this).attr('id') ? $(this).attr('id') : $(this).attr('class'));
 }
