@@ -7,8 +7,8 @@ $(document).ready(function() {
 		event.originalEvent.preventDefault();
 	});
 	$('section#main').on('drop', function(event) {
-		$('section#main h1').remove();
-		$('section#main').append('<h1>' + JSON.stringify(event) + '</h1>');
+		$('section#main p').remove();
+		$('section#main').append('<p>' + JSON.stringify(event) + '</p>');
 		/*
 		event = event.originalEvent;
 		var id = event.dataTransfer.getData('type');
