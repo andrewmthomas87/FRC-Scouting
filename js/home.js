@@ -7,6 +7,7 @@ $(document).ready(function() {
 		event.originalEvent.preventDefault();
 	});
 	$('section#main').on('drop', function(event) {
+		alert(JSON.stringify(event));
 		event = event.originalEvent;
 		alert(JSON.stringify(event));
 		var id = event.dataTransfer.getData('type');
