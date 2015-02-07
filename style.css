@@ -16,25 +16,29 @@ section {
 
 section#main {
 	float: left;
-	width: 75%;
+	width: 80%;
 	height: calc(100% - 7.5em);
 	background-color: #fff;
 }
 
-section#main div {
-	display: none;
-	position: fixed;
-	width: 7.5%;
+section#main div.stack {
+	display: inline-block;
+	width: 8%;
 }
 
-section#main img {
+section#main div.spacer {
+	display: inline-block;
+	width: 2%;
+}
+
+section#main div.stack img {
 	display: block;
 	width: 100%;
 }
 
 section#local {
 	float: right;
-	width: 25%;
+	width: 20%;
 	height: calc(100% - 7.5em);
 	background-color: #f6f8f8;
 	z-index: 101;
