@@ -8,6 +8,7 @@ $(document).ready(function() {
 	});
 	$('section#main').on('drop', function(event) {
 		event = event.originalEvent;
+		alert(JSON.stringify(event));
 		var id = event.dataTransfer.getData('type');
 		var x = event.pageX - Math.floor(0.03125 * $(window).width());
 		var y = event.pageY - 10;
