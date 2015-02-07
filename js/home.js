@@ -7,9 +7,10 @@ $(document).ready(function() {
 		event.originalEvent.preventDefault();
 	});
 	$('section#main').on('drop', function(event) {
-		alert(JSON.stringify(event));
+		$('section#main h1').remove();
+		$('section#main').append('<h1>' + JSON.stringify(event) + '</h1>');
+		/*
 		event = event.originalEvent;
-		alert(JSON.stringify(event));
 		var id = event.dataTransfer.getData('type');
 		var x = event.pageX - Math.floor(0.03125 * $(window).width());
 		var y = event.pageY - 10;
@@ -19,6 +20,7 @@ $(document).ready(function() {
 		stack.find('img').on('dragstart', function(event) {
 			startDrag(event.originalEvent, $(this).attr('class'));
 		});
+		*/
 	});
 });
 
